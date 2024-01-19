@@ -16,7 +16,6 @@ export default function OnBoarding() {
     <div>
       <div className="min-h-screen flex justify-center">
         <div className="mt-24">
-          {/* <h1 className="text-5xl text-center py-20">Logo</h1> */}
           <div className="flex flex-col items-center">
             <img src={Pulse} />
             <div className="max-w-screen-2xl mx-auto">

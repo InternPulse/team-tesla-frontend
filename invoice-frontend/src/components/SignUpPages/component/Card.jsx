@@ -4,7 +4,7 @@ export default function Card({ data, onClick, selected }) {
     <div
       onClick={onClick}
       className={`${
-        selected ? "border border-blue-600" : "border border-slate-500"
+        selected ? "border border-mustard" : "border border-lightMustard"
       } py-9 px-4 flex flex-col rounded-md hover:cursor-pointer`}
     >
       <img src={data.svg} alt="" className="w-7 h-7" />

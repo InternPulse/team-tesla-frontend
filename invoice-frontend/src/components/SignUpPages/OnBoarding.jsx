@@ -17,12 +17,12 @@ export default function OnBoarding() {
       <div className="min-h-screen flex justify-center">
         <div className="mt-24">
           <div className="flex flex-col items-center">
-            <img src={Pulse} />
+            <img src={Pulse} alt="Invoice Pulse" className="pb-14" />
             <div className="max-w-screen-2xl mx-auto">
-              <h2 className="text-2xl text-slate-500">
+              <h2 className="text-2xl text-slightGray">
                 What type of account would you like to create?
               </h2>
-              <p className="mt-4 text-lg">
+              <p className="mt-4 text-lg text-slightGray">
                 Select the account type that best meets your needs.
               </p>
             </div>
@@ -44,13 +44,13 @@ export default function OnBoarding() {
                     : "/business-registration"
                   : null
               }
-              className="bg-slate-500 text-white text-center w-96 mt-14 py-4 px-10 hover:bg-slate-600 transition ease-in-out"
+              className="bg-mustard text-white text-center w-96 mt-14 py-4 px-10 rounded-md"
             >
               Continue
             </Link>
             <p className="text-slate-600 text-sm mt-3">
               Already have an account?{" "}
-              <Link to="/login" className="text-black">
+              <Link to="/login" className="text-mustard">
                 Login here
               </Link>
             </p>

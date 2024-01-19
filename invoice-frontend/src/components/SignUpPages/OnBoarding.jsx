@@ -1,5 +1,6 @@
 import Mockupdata from "./data/Mockupdata";
 import Card from "./component/Card";
+import Pulse from "/Exclude.png";
 import { Link } from "react-router-dom";
 
 import { useState } from "react";
@@ -15,8 +16,9 @@ export default function OnBoarding() {
     <div>
       <div className="min-h-screen flex justify-center">
         <div className="mt-24">
-          <h1 className="text-5xl text-center py-20">Logo</h1>
+          {/* <h1 className="text-5xl text-center py-20">Logo</h1> */}
           <div className="flex flex-col items-center">
+            <img src={Pulse} />
             <div className="max-w-screen-2xl mx-auto">
               <h2 className="text-2xl text-slate-500">
                 What type of account would you like to create?

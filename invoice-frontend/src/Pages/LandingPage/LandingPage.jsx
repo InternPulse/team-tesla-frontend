@@ -1,12 +1,14 @@
 import Layout from "../../layout/layout";
-import Header from "../../components/header/header";
+import Header from "../../components/header";
+import About from "../../components/About";
+import Feedback from "../../components/Feedback";
 
 const LandingPage = () => {
   return (
     <Layout>
-      <div>
-        <Header />
-      </div>
+      <Header />
+      <About />
+      <Feedback />
     </Layout>
   );
 };

@@ -55,6 +55,12 @@ export default function BusinessRegistration() {
               className="border border-borderGray text-black"
             />
           </div>
+          <div>
+            <input type="checkbox" />
+            <span>
+              I accept the <span>terms and conditions of Invoice Pulse</span>{" "}
+            </span>
+          </div>
         </form>
       </div>
     </div>

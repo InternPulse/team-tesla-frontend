@@ -11,10 +11,10 @@ const Navbar = () => {
           <Navlinks />
         </div>
         <div className=" w-[20%] flex justify-between gap-[20px]">
-          <button className=" bg-slate-600 text-white w-[100%]">
+          <button className=" bg-slate-600 text-white w-[100%] rounded">
             Get Started
           </button>
-          <button className=" outline-slate-700 outline-1 outline w-[100%]">
+          <button className=" outline-slate-700 outline-2 outline w-[100%] rounded py-[5px]">
             Login
           </button>
         </div>

@@ -97,7 +97,7 @@ export default function BusinessRegistration() {
           <Button style="ml-5" text="Create and account" />
         </form>
         <p className="text-slate-600 text-sm mt-3 text-center ml">
-          Already have an account?{" "}
+          Already have an account?
           <Link to="/login" className="text-mustard">
             Login here
           </Link>

@@ -43,41 +43,43 @@ const Footer = () => {
   ];
 
   return (
-    <div className=" flex justify-between w-[100%] mt-[100px] mb-[20px] gap-[30px]">
-      <div className=" w-[25%]">
-        {" "}
-        <p className=" text-3xl">LOGO</p>
-        <p className=" text-[15px]">
-          Lorem ipsum dolor sit amet consectetur. Facilisis ipsum gravida amet
-          ultrices mauris.{" "}
-        </p>
-        <div className=" flex">
-          <img />
+    <div className="  w-[100%] mt-[100px] p-[60px]  bg-slate-400 text-white">
+      <div className="  flex justify-between  gap-[30px]  max-w-[1100px] m-auto">
+        <div className=" w-[25%]">
+          {" "}
+          <p className=" text-3xl">LOGO</p>
+          <p className=" text-[15px]">
+            Lorem ipsum dolor sit amet consectetur. Facilisis ipsum gravida amet
+            ultrices mauris.{" "}
+          </p>
+          <div className=" flex">
+            <img />
+          </div>
         </div>
-      </div>
-      <div className=" flex flex-col gap-[10px]">
-        <p className=" text-[17px] font-bold">Company</p>
-        {Quicklinks.map((data) => (
-          <Link key={data.name} to={data.to}>
-            <p className=" text-[12px] font-medium">{data.name}</p>
-          </Link>
-        ))}
-      </div>
-      <div className=" flex flex-col gap-[10px]">
-        <p className=" text-[17px] font-bold">Company</p>
-        {Services.map((data) => (
-          <Link key={data.name} to={data.to}>
-            <p className=" text-[12px] font-medium">{data.name}</p>
-          </Link>
-        ))}
-      </div>
-      <div className=" flex flex-col gap-[10px]">
-        <p className=" text-[17px] font-bold">Contact</p>
-        <div className=" flex flex-col gap-[10px] text-[12px] font-medium">
-          <p>16,Ikeja,Lagos State</p>
-          <p>+32453658562</p>
-          <p>Smartbiz40@gmail.com</p>
-          <p>2(444) 233-4643</p>
+        <div className=" flex flex-col gap-[10px]">
+          <p className=" text-[17px] font-bold">Company</p>
+          {Quicklinks.map((data) => (
+            <Link key={data.name} to={data.to}>
+              <p className=" text-[12px] font-medium">{data.name}</p>
+            </Link>
+          ))}
+        </div>
+        <div className=" flex flex-col gap-[10px]">
+          <p className=" text-[17px] font-bold">Company</p>
+          {Services.map((data) => (
+            <Link key={data.name} to={data.to}>
+              <p className=" text-[12px] font-medium">{data.name}</p>
+            </Link>
+          ))}
+        </div>
+        <div className=" flex flex-col gap-[10px]">
+          <p className=" text-[17px] font-bold">Contact</p>
+          <div className=" flex flex-col gap-[10px] text-[12px] font-medium">
+            <p>16,Ikeja,Lagos State</p>
+            <p>+32453658562</p>
+            <p>Smartbiz40@gmail.com</p>
+            <p>2(444) 233-4643</p>
+          </div>
         </div>
       </div>
     </div>

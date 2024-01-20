@@ -2,8 +2,18 @@ import Button from "../component/Button";
 import Pulse from "/Exclude.png";
 import { Link } from "react-router-dom";
 import eye from "../../../assets/eye.svg";
+import eyeSlash from "../../../assets/eyeSlash.svg";
+import { useState } from "react";
 
 export default function BusinessRegistration() {
+  const [passwordType, setpasswordType] = useState("password");
+
+  const togglePasswordView = () => {
+    setpasswordType((prevType) =>
+      prevType === "password" ? "text" : "password"
+    );
+  };
+
   return (
     <div className="min-h-screen flex justify-center">
       <div className="mt-10 flex flex-col">
@@ -39,23 +49,40 @@ export default function BusinessRegistration() {
               className="border border-borderGray w-full py-3 px-3 rounded-md outline-mustard my-4"
             />
           </div>
-          <div>
+          <div className="relative">
             <label htmlFor="Full name" className="text-[16px] text-slightGray">
               Choose your password
             </label>
             <input
-              type="password"
-              className="border border-borderGray text-black w-full  my-4 py-3 px-3 rounded-md outline-mustard"
+              type={passwordType}
+              className="border border-borderGray text-black w-full  my-4 py-3 px-3 rounded-md outline-mustard "
             />
+            <div className="absolute top-[53px] right-5">
+              {passwordType == "password" ? (
+                <img
+                  src={eye}
+                  alt="eye"
+                  className="w-6 h-6 cursor-pointer"
+                  onClick={togglePasswordView}
+                />
+              ) : (
+                <img
+                  src={eyeSlash}
+                  alt="eyeSlash"
+                  className="w-6 h-6 cursor-pointer"
+                  onClick={togglePasswordView}
+                />
+              )}
+            </div>
           </div>
-          <label htmlFor="Full name" className="text-[16px] text-slightGray">
-            Business Name
-          </label>
-          <div>
+          <div className="my-3">
+            <label htmlFor="Full name" className="text-[16px] text-slightGray">
+              Business Name
+            </label>
             <input
               type="text"
               placeholder="Team Tesla"
-              className="border border-borderGray text-black w-full my-4 py-3 px-3"
+              className="border border-borderGray outline-mustard text-black w-full my-4 py-3 px-3 rounded-md"
             />
           </div>
           <div className="mt-4 space-x-3">

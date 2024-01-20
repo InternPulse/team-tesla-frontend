@@ -61,7 +61,6 @@ export default function LoginPage() {
               )}
             </div>
           </div>
-
           <Button text="Login" />
         </form>
         <p className="text-slate-600 text-sm mt-3 text-center ml">

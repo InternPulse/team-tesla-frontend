@@ -7,6 +7,8 @@ export default {
         mustard: "#FFB703",
         lightMustard: "#ffe29a",
         slightGray: "#404859",
+        lighterGray: " #40485980",
+        borderGray: "#ABB2C0",
       },
     },
   },

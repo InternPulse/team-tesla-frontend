@@ -54,7 +54,7 @@ const Authentication = () => {
           ))}
         </div>
         <div className=" flex justify-center">
-          <Link to="#">
+          <Link to="/auth/loading">
             <button className="bg-mustard text-white text-center w-96 mt-6 py-4 px-10 rounded-md hover:bg-amber-200">
               Confirm your email
             </button>

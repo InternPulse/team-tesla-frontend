@@ -26,22 +26,24 @@ const Authentication = () => {
   };
 
   return (
-    <div className="otp-container min-h-screen flex justify-center items-center ">
-      <div>
-        <div className="justify-center flex">
+    <div className="otp-container min-h-screen flex justify-center ">
+      <div className="">
+        <div className="justify-center flex my-24">
           <img src={Logo} alt="Logo" />
         </div>
-        <div className="text-center">
-          <p className="text-2xl text-slightGray my-[20px]">
+        <div className="text-start">
+          <p className="text-[20px] text-slightGray my-[20px] font-Nunito font-[600]">
             We just sent you an email
           </p>
-          <p className=" my-[20px] text-[13px]  text-slightGray">
+          <p className=" text-[18px] text-start my-10  text-slightGray font-Montserrat font-[400]">
             Enter the verification code sent to JohnDoe@gmail.com
             <br /> to confirm your email address
           </p>
-          <p className=" text-slightGray my-[15px]">Email verification code</p>
+          <p className=" text-slightGray my-[15px] text-[20px] text-start font-Nunito font-[600] mb-5">
+            Email verification code
+          </p>
         </div>
-        <div className="justify-center flex space-x-4 ">
+        <div className=" flex justify-between space-x-4 mt-10 ">
           {otp.map((digit, index) => (
             <input
               key={index}
@@ -53,14 +55,14 @@ const Authentication = () => {
             />
           ))}
         </div>
-        <div className=" flex justify-center">
+        <div className=" flex justify-center mt-10">
           <Link to="/auth/loading">
-            <button className="bg-mustard text-white text-center w-96 mt-6 py-4 px-10 rounded-md hover:bg-amber-200">
+            <button className="bg-mustard text-white text-center w-96 mt-6 py-4 px-10 rounded-md cursor-pointer">
               Confirm your email
             </button>
           </Link>
         </div>
-        <p className=" my-[10px] text-mustard text-center">
+        <p className=" mt-5 text-mustard text-center">
           <Link to="#">Didn’t receive the OTP?</Link>
         </p>
       </div>

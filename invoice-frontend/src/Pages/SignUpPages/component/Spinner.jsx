@@ -17,7 +17,7 @@ export default function Spinner() {
           fill="currentFill"
         />
       </svg>
-      <p className="mt-10 text-[20px]">
+      <p className="mt-10 text-[20px] font-Montserrat">
         Please wait while we set up your account
       </p>
     </div>

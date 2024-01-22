@@ -19,10 +19,10 @@ export default function OnBoarding() {
           <div className="flex flex-col items-center">
             <img src={Pulse} alt="Invoice Pulse" className="pb-14" />
             <div className="max-w-screen-2xl mx-auto">
-              <h2 className="text-2xl text-slightGray">
+              <h2 className="text-2xl text-slightGray font-Nunito font-[600]">
                 What type of account would you like to create?
               </h2>
-              <p className="mt-4 text-lg text-slightGray">
+              <p className="mt-4 text-lg text-slightGray font-Montserra text-center">
                 Select the account type that best meets your needs.
               </p>
             </div>
@@ -48,7 +48,7 @@ export default function OnBoarding() {
             >
               Continue
             </Link>
-            <p className="text-slate-600 text-sm mt-3">
+            <p className="text-slate-600 text-sm mt-3 font-Montserrat">
               Already have an account?{" "}
               <Link to="/login" className="text-mustard">
                 Login here

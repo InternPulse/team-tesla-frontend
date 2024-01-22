@@ -12,7 +12,7 @@ export default [
   {
     type: "user",
     title: "Individual Account",
-    text: "For personal or for family.",
+    text: "For personal or for family e.t.c",
     svg: personSVG,
     alt: "Briefcase image",
   },

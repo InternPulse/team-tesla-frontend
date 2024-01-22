@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ImgCard from "../../assets/box.png";
 
 const Header = () => {
@@ -11,9 +12,12 @@ const Header = () => {
           your invoices with ease.
         </p>
         <div className=" w-[50%] flex justify-between gap-[20px] pt-[20px]">
-          <button className=" bg-slate-400 text-white w-[100%] rounded py-[10px]">
+          <Link
+            to="/onboarding"
+            className=" bg-slate-400 text-center text-white w-[100%] rounded py-[10px]"
+          >
             Get Started
-          </button>
+          </Link>
           <button className=" outline-slate-700 outline-2 outline w-[100%] rounded">
             Watch a Demo
           </button>

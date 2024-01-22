@@ -11,8 +11,7 @@ export default {
         borderGray: "#ABB2C0",
       },
       fontFamily: {
-        // Set your general font here
-        body: ["Inter", "sans-serif"],
+        Montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },

@@ -20,11 +20,14 @@ export default function UserRegistration() {
         <div className="flex justify-center">
           <img src={Pulse} alt="Invoice Pulse" className="pb-14 " />
         </div>
-        <h1 className="text-slightGray text-[20px]">
+        <h1 className="text-slightGray text-[20px] font-Nunito font-[600]">
           Enter your details to set up your Individual account
         </h1>
-        <form className="flex flex-col mt-10 text-lighterGray max-w-2xl mx-auto justify-center">
-          <label htmlFor="Full name" className="text-[16px] text-slightGray">
+        <form className="flex flex-col mt-10 text-lighterGray max-w-2xl mx-auto justify-center font-Montserrat">
+          <label
+            htmlFor="Full name"
+            className="text-[16px] text-slightGray font-[500]"
+          >
             Full Name
           </label>
           <div className="space-x-5 flex justify-between my-4">
@@ -40,7 +43,10 @@ export default function UserRegistration() {
             />
           </div>
           <div className="my-4">
-            <label htmlFor="Full name" className="text-[16px] text-slightGray">
+            <label
+              htmlFor="Full name"
+              className="text-[16px] text-slightGray font-[500]"
+            >
               Email address
             </label>
             <input
@@ -50,7 +56,10 @@ export default function UserRegistration() {
             />
           </div>
           <div className="relative">
-            <label htmlFor="Full name" className="text-[16px] text-slightGray">
+            <label
+              htmlFor="Full name"
+              className="text-[16px] text-slightGray font-[500]"
+            >
               Choose your password
             </label>
             <input
@@ -76,7 +85,10 @@ export default function UserRegistration() {
             </div>
           </div>
           <div className="my-3">
-            <label htmlFor="Full name" className="text-[16px] text-slightGray">
+            <label
+              htmlFor="Full name"
+              className="text-[16px] text-slightGray font-[500]"
+            >
               Create Individual Url
             </label>
             <input
@@ -96,7 +108,7 @@ export default function UserRegistration() {
           </div>
           <Button style="ml-5" text="Create and account" />
         </form>
-        <p className="text-slate-600 text-sm mt-3 text-center ml">
+        <p className="text-slate-600 text-sm mt-3 text-center font-Montserrat font-[400]">
           Already have an account?
           <Link to="/login" className="text-mustard">
             Login here

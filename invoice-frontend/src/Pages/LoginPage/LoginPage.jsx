@@ -21,21 +21,21 @@ export default function LoginPage() {
         <div className="flex justify-center">
           <img src={Pulse} alt="Invoice Pulse" className="pb-14 " />
         </div>
-        <h1 className="text-slightGray text-[20px] text-center">
+        <h1 className="text-slightGray text-[20px] text-center font-Nunito">
           Welcome back, Log in to continue
         </h1>
         <form className="flex flex-col mt-10 text-lighterGray max-w-2xl mx-auto justify-center">
-          <div className="my-4">
-            <label htmlFor="Full name" className="text-[16px] text-slightGray">
+          <div className="my-4 font-Montserrat">
+            <label htmlFor="Full name" className="text-[16px] text-slightGray ">
               Email address
             </label>
             <input
               type="email"
               placeholder="JohnDoe@example.com"
-              className="border border-borderGray w-full py-3 px-3 rounded-md outline-mustard my-4"
+              className="border border-borderGray w-full py-3 px-3 rounded-md text-black outline-mustard my-4"
             />
           </div>
-          <div className="relative">
+          <div className="relative font-Montserrat">
             <label htmlFor="Full name" className="text-[16px] text-slightGray">
               Choose your password
             </label>
@@ -63,7 +63,7 @@ export default function LoginPage() {
           </div>
           <Button text="Login" />
         </form>
-        <p className="text-slate-600 text-sm mt-3 text-center ml">
+        <p className="text-slate-600 text-sm mt-3 text-center font-Montserrat">
           Don't have an account?
           <Link to="/login" className="text-mustard pl-1">
             Sign up here

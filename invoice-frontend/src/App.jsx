@@ -4,6 +4,7 @@ import OnBoarding from "./Pages/SignUpPages/OnBoarding";
 import BusinessRegistration from "./Pages/SignUpPages/pages/BusinessRegistration";
 import UserRegistration from "./Pages/SignUpPages/pages/UserRegistration";
 import LoginPage from "./Pages/LoginPage/LoginPage";
+import Authentication from "./Pages/SignUpPages/pages/SecureLogin";
 export default function App() {
   return (
     <>
@@ -16,6 +17,7 @@ export default function App() {
         />
         <Route element={<UserRegistration />} path="user-registration" />
         <Route element={<LoginPage />} path="/login" />
+        <Route element={<Authentication />} path="/auth" />
       </Routes>
     </>
   );

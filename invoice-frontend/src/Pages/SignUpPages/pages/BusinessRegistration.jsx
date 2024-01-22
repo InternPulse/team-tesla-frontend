@@ -20,11 +20,14 @@ export default function BusinessRegistration() {
         <div className="flex justify-center">
           <img src={Pulse} alt="Invoice Pulse" className="pb-5 h-20 " />
         </div>
-        <h1 className="text-slightGray text-[20px]">
+        <h1 className="text-slightGray text-[20px] font-Nunito">
           Enter your details to set up your business account
         </h1>
-        <form className="flex flex-col mt-10 text-lighterGray max-w-2xl mx-auto justify-center">
-          <label htmlFor="Full name" className="text-[16px] text-slightGray">
+        <form className="flex flex-col mt-10 text-lighterGray max-w-2xl mx-auto justify-center font-Montserrat">
+          <label
+            htmlFor="Full name"
+            className="text-[16px] text-slightGray font-[500]"
+          >
             Full Name
           </label>
           <div className="space-x-5 flex justify-between my-4">
@@ -40,17 +43,23 @@ export default function BusinessRegistration() {
             />
           </div>
           <div className="my-4">
-            <label htmlFor="Full name" className="text-[16px] text-slightGray">
+            <label
+              htmlFor="Full name"
+              className="text-[16px] text-slightGray font-[500]"
+            >
               Email address
             </label>
             <input
               type="email"
               placeholder="JohnDoe@example.com"
-              className="border border-borderGray w-full py-3 px-3 rounded-md outline-mustard my-4"
+              className="border border-borderGray w-full py-3 px-3 rounded-md outline-mustard my-4 text-black"
             />
           </div>
           <div className="relative">
-            <label htmlFor="Full name" className="text-[16px] text-slightGray">
+            <label
+              htmlFor="Full name"
+              className="text-[16px] text-slightGray font-[500]"
+            >
               Choose your password
             </label>
             <input
@@ -76,7 +85,10 @@ export default function BusinessRegistration() {
             </div>
           </div>
           <div className="my-3">
-            <label htmlFor="Full name" className="text-[16px] text-slightGray">
+            <label
+              htmlFor="Full name"
+              className="text-[16px] text-slightGray font-[500]"
+            >
               Business Name
             </label>
             <input
@@ -97,7 +109,7 @@ export default function BusinessRegistration() {
               </Link>{" "}
             </span>
           </div>
-          <Button style="ml-10 " text="Create and account" />
+          <Button style="ml-5 " text="Create and account" />
         </form>
         <p className="text-slate-600 text-sm mt-3 text-center mb-10">
           Already have an account?

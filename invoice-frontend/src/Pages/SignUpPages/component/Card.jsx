@@ -5,7 +5,7 @@ export default function Card({ data, onClick, selected }) {
       onClick={onClick}
       className={`${
         selected ? "border border-mustard" : "border border-lightMustard"
-      } py-9 px-4 flex flex-col rounded-md hover:cursor-pointer`}
+      } py-9 px-4 flex flex-col rounded-md cursor-pointer font-Montserrat `}
     >
       <img src={data.svg} alt="" className="w-7 h-7" />
       <h1 className="mt-4">{data.title}</h1>

@@ -12,6 +12,7 @@ export default {
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],
+        Nunito: ["Nunito", "sans-serif"],
       },
     },
   },

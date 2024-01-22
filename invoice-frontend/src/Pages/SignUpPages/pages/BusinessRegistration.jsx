@@ -18,7 +18,7 @@ export default function BusinessRegistration() {
     <div className="min-h-screen flex justify-center">
       <div className="mt-10 flex flex-col">
         <div className="flex justify-center">
-          <img src={Pulse} alt="Invoice Pulse" className="pb-14 " />
+          <img src={Pulse} alt="Invoice Pulse" className="pb-5 h-20 " />
         </div>
         <h1 className="text-slightGray text-[20px]">
           Enter your details to set up your business account
@@ -86,7 +86,10 @@ export default function BusinessRegistration() {
             />
           </div>
           <div className="mt-4 space-x-3">
-            <input type="checkbox" className="border border-mustard" />
+            <input
+              type="checkbox"
+              className="border border-mustard outline outline-mustard rounded focus:bg-mustard"
+            />
             <span className="text-black">
               I accept the{" "}
               <Link to="/term-conditions" className="text-mustard">
@@ -94,9 +97,9 @@ export default function BusinessRegistration() {
               </Link>{" "}
             </span>
           </div>
-          <Button style="ml-5" text="Create and account" />
+          <Button style="ml-10 " text="Create and account" />
         </form>
-        <p className="text-slate-600 text-sm mt-3 text-center ml">
+        <p className="text-slate-600 text-sm mt-3 text-center mb-10">
           Already have an account?
           <Link to="/login" className="text-mustard">
             Login here

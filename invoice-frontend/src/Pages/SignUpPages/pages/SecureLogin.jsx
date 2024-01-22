@@ -3,6 +3,7 @@ import Logo from "../../../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Authentication = () => {
+  const usernameFromAPI = "John23@gmail.com";
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const inputRefs = useRef([]);
 
@@ -36,14 +37,14 @@ const Authentication = () => {
             We just sent you an email
           </p>
           <p className=" text-[18px] text-start my-10  text-slightGray font-Montserrat font-[400]">
-            Enter the verification code sent to JohnDoe@gmail.com
+            Enter the verification code sent to {usernameFromAPI}
             <br /> to confirm your email address
           </p>
           <p className=" text-slightGray my-[15px] text-[20px] text-start font-Nunito font-[600] mb-5">
             Email verification code
           </p>
         </div>
-        <div className=" flex justify-between space-x-4 mt-10 ">
+        <div className=" flex justify-between mt-10 ">
           {otp.map((digit, index) => (
             <input
               key={index}
@@ -57,12 +58,12 @@ const Authentication = () => {
         </div>
         <div className=" flex justify-center mt-10">
           <Link to="/auth/loading">
-            <button className="bg-mustard text-white text-center w-96 mt-6 py-4 px-10 rounded-md cursor-pointer">
+            <button className="bg-mustard text-white text-center w-96 mt-6 py-4 px-10 rounded-md cursor-pointer font-Montserrat font-[400]">
               Confirm your email
             </button>
           </Link>
         </div>
-        <p className=" mt-5 text-mustard text-center">
+        <p className=" mt-5 text-mustard text-center font-Montserrat font-[400]">
           <Link to="#">Didn’t receive the OTP?</Link>
         </p>
       </div>

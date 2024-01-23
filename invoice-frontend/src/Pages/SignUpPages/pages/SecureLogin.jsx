@@ -30,7 +30,7 @@ const Authentication = () => {
     <div className="otp-container min-h-screen flex justify-center ">
       <div className="">
         <div className="justify-center flex my-24">
-          <img src={Logo} alt="Logo" />
+          <img src={Logo} alt="Logo" className="w-56" />
         </div>
         <div className="text-start">
           <p className="text-[20px] text-slightGray my-[20px] font-Nunito font-[600]">

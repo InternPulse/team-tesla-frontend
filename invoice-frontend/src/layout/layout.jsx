@@ -3,10 +3,14 @@ import Footer from "../components/footer";
 
 const Layout = ({ children }) => {
   return (
-    <div className="  max-w-[1100px] m-auto">
-      <Navbar />
+    <div>
+      <div className=" max-w-[1150px] m-auto">
+        <Navbar />
+      </div>
       <div>{children}</div>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };

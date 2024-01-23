@@ -3,6 +3,8 @@ import settings2 from "../../../assets/settings2.png";
 import person from "../../../assets/person.png";
 import search from "../../../assets/search.png";
 import Cards from "../components/Cards";
+import UserData from "../data/UserData";
+import TableComponent from "../components/TableComponent";
 
 export default function Home() {
   return (
@@ -41,6 +43,14 @@ export default function Home() {
           <Cards title="Payments" percent="+3" amount="$20,000" />
           <Cards title="Expenses" percent="+3" amount="$12,000" />
           <Cards title="Clients" percent="+3" amount="4,000" />
+        </div>
+      </div>
+      <div className="mt-10 bg-white rounded-md p-5">
+        <h1 className="text-[20px font-Montserrat font-[600]  border-b pb-5">
+          Recent invoices
+        </h1>
+        <div>
+          <TableComponent data={UserData} />
         </div>
       </div>
     </section>

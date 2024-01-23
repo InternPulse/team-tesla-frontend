@@ -14,6 +14,9 @@ export default {
         yellowTint: "#FFF3CC",
         success: "#2AA258",
         successTint: "#94D0AB",
+        error: "#BC4229",
+        warn: "#806200",
+        lightSuccessTint: "#D4ECDE",
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],

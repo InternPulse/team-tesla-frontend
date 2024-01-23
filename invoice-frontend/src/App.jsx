@@ -7,6 +7,7 @@ import LoginPage from "./Pages/LoginPage/LoginPage";
 import Authentication from "./Pages/SignUpPages/pages/SecureLogin";
 import Loading from "./Pages/SignUpPages/pages/Loading";
 import DashBoard from "./Pages/Dashboard/Dashboard";
+
 export default function App() {
   return (
     <>
@@ -21,7 +22,7 @@ export default function App() {
         <Route element={<LoginPage />} path="/login" />
         <Route element={<Authentication />} path="/auth" />
         <Route element={<Loading />} path="/auth/loading" />
-        <Route element={<DashBoard />} path="/dashboard" />
+        <Route element={<DashBoard />} path="/dashboard/*" />
       </Routes>
     </>
   );

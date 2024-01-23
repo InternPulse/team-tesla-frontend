@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import Pulse from "/Exclude.png";
 import Navlinks from "../data/Navlinks";
+import question from "../../../assets/question.png";
 
 export default function SideNav() {
   const { pathname } = useLocation();
@@ -26,6 +27,10 @@ export default function SideNav() {
               </Link>
             </div>
           ))}
+        </div>
+        <div className="flex items-center mt-[420px] p-6 space-x-3 font-Montserrat font-[400]">
+          <img src={question} alt="" />
+          <Link to="/help">Help</Link>
         </div>
       </nav>
     </div>

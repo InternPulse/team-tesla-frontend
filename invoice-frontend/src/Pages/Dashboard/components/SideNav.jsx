@@ -7,7 +7,7 @@ export default function SideNav() {
   const { pathname } = useLocation();
 
   return (
-    <div className="min-h-screen w-[241px]">
+    <div className="min-h-screen w-[241px] relative">
       <nav className="p-6">
         <div className="pb-10">
           <img src={Pulse} alt="Invoice Pulse" />
@@ -28,7 +28,7 @@ export default function SideNav() {
             </div>
           ))}
         </div>
-        <div className="flex items-center mt-[420px] p-6 space-x-3 font-Montserrat font-[400]">
+        <div className="flex absolute bottom-0 items-center mt-[420px] p-6 space-x-3 font-Montserrat font-[400]">
           <img src={question} alt="" />
           <Link to="/help">Help</Link>
         </div>

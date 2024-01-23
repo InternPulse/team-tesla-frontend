@@ -2,6 +2,7 @@ import bell from "../../../assets/bell.png";
 import settings2 from "../../../assets/settings2.png";
 import person from "../../../assets/person.png";
 import search from "../../../assets/search.png";
+import Cards from "../components/Cards";
 
 export default function Home() {
   return (
@@ -23,6 +24,25 @@ export default function Home() {
         </div>
       </div>
       <h1 className="mt-5 font-Montserrat font-[600]">Dashboard</h1>
+      <div className="bg-white mt-10 rounded-lg p-5 pb-7">
+        <div className="flex justify-between items-center">
+          <h1 className="font-Montserrat font-[600]">Overview</h1>
+          <div>
+            <select
+              name="range"
+              className="bg-yellowTint font-Montserrat font-[400]"
+            >
+              <option value="Monthly">Monthly</option>
+            </select>
+          </div>
+        </div>
+        <div className="flex items-center justify-between  my-5 mt-5">
+          <Cards title="Invoices" percent="+3" amount={250} />
+          <Cards title="Payments" percent="+3" amount="$20,000" />
+          <Cards title="Expenses" percent="+3" amount="$12,000" />
+          <Cards title="Clients" percent="+3" amount="4,000" />
+        </div>
+      </div>
     </section>
   );
 }

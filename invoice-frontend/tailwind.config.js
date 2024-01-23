@@ -11,6 +11,9 @@ export default {
         borderGray: "#ABB2C0",
         offGray: "#F7F7FC",
         yellowShade: " #806200",
+        yellowTint: "#FFF3CC",
+        success: "#2AA258",
+        successTint: "#94D0AB",
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],

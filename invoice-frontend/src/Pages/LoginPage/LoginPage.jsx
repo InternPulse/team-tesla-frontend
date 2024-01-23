@@ -1,75 +1,98 @@
-/* eslint-disable react/no-unescaped-entities */
+// import Button from "../component/Button";
 import Pulse from "/Exclude.png";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import eye from "../../assets/eye.svg";
 import eyeSlash from "../../assets/eyeSlash.svg";
-import Button from "../SignUpPages/component/Button";
+import { useState } from "react";
+import { Formik, Form, Field } from "formik";
+import { Center, Input, Stack } from "@chakra-ui/react";
 
-export default function LoginPage() {
+export default function BusinessRegistration() {
   const [passwordType, setpasswordType] = useState("password");
 
   const togglePasswordView = () => {
-    setpasswordType((prevType) =>
-      prevType === "password" ? "text" : "password"
-    );
+    setpasswordType((prevType) => (prevType === "text" ? "password" : "text"));
+  };
+
+  const handleSubmit = () => {
+    console.log(handleSubmit);
+  };
+
+  let data = {
+    username: "",
+    password: "",
   };
 
   return (
-    <div className="min-h-screen flex justify-center">
-      <div className="mt-10 flex flex-col">
-        <div className="flex justify-center">
-          <img src={Pulse} alt="Invoice Pulse" className="pb-14 " />
-        </div>
-        <h1 className="text-slightGray text-[20px] text-center font-Nunito">
-          Welcome back, Log in to continue
-        </h1>
-        <form className="flex flex-col mt-10 text-lighterGray max-w-2xl mx-auto justify-center font-Montserrat">
-          <div className="my-4 ">
-            <label htmlFor="Full name" className="text-[16px] text-slightGray ">
-              Email address
-            </label>
-            <input
-              type="email"
-              placeholder="JohnDoe@example.com"
-              className="border border-borderGray w-full py-3 px-3 rounded-md text-black outline-mustard my-4"
-            />
-          </div>
-          <div className="relative ">
-            <label htmlFor="Full name" className="text-[16px] text-slightGray">
-              Choose your password
-            </label>
-            <input
-              type={passwordType}
-              className="border border-borderGray text-black w-full  my-4 py-3 px-3 rounded-md outline-mustard "
-            />
-            <div className="absolute top-[53px] right-5">
-              {passwordType == "password" ? (
-                <img
-                  src={eye}
-                  alt="eye"
-                  className="w-6 h-6 cursor-pointer"
-                  onClick={togglePasswordView}
-                />
-              ) : (
-                <img
-                  src={eyeSlash}
-                  alt="eyeSlash"
-                  className="w-6 h-6 cursor-pointer"
-                  onClick={togglePasswordView}
-                />
-              )}
-            </div>
-          </div>
-          <Button text="Login" />
-        </form>
-        <p className="text-slate-600 text-sm mt-3 text-center font-Montserrat">
-          Don't have an account?
-          <Link to="/login" className="text-mustard pl-1">
-            Sign up here
-          </Link>
-        </p>
+    <Center h="100vh" flexDir="column" className=" font-Nunito">
+      <div className="text-center">
+        <img src={Pulse} className="mx-auto my-[10px]" alt="Pulse Logo" />
+        <p className=" text-[14px]">Enter your account details</p>
       </div>
-    </div>
+      <Formik initialValues={data} onSubmit={handleSubmit}>
+        <Form>
+          <Stack pt={"20px"} spacing={"15px"}>
+            <p className=" text-[14px]">Username</p>
+            <div>
+              <Field
+                as={Input}
+                type="name"
+                placeholder="Username"
+                name="username"
+                required
+                focusBorderColor="#FFDB58"
+                fontSize={"14px"}
+              />
+            </div>
+
+            <div className="relative">
+              <p className=" text-[14px]">Password</p>
+              <Field
+                as={Input}
+                type={passwordType}
+                name="password"
+                required
+                focusBorderColor="#FFDB58"
+                fontSize={"14px"}
+                width="350px"
+              />
+              <div className="absolute top-[30px] right-5">
+                {passwordType === "password" ? (
+                  <img
+                    src={eyeSlash}
+                    alt="eye"
+                    className="w-6 h-6 cursor-pointer"
+                    onClick={togglePasswordView}
+                  />
+                ) : (
+                  <img
+                    src={eye}
+                    alt="eyeSlash"
+                    className="w-6 h-6 cursor-pointer"
+                    onClick={togglePasswordView}
+                  />
+                )}
+              </div>
+            </div>
+
+            <div>
+              <button className=" bg-mustard w-[100%] p-[12px] mt-[12px] rounded">
+                <Link to="/dashboard/*" className=" text-white">
+                  Login
+                </Link>
+              </button>
+            </div>
+            <div>
+              <p className=" text-center text-[14px]">
+                Dont have an account?
+                <span className=" text-mustard">
+                  <Link to="/onboarding"> Sign Up</Link>
+                </span>
+              </p>
+            </div>
+          </Stack>
+        </Form>
+      </Formik>
+    </Center>
   );
 }

@@ -1,123 +1,146 @@
-import Button from "../component/Button";
+// import Button from "../component/Button";
 import Pulse from "/Exclude.png";
 import { Link } from "react-router-dom";
 import eye from "../../../assets/eye.svg";
 import eyeSlash from "../../../assets/eyeSlash.svg";
 import { useState } from "react";
+import { Formik, Form, Field } from "formik";
+import { Center, Input, Stack, Flex } from "@chakra-ui/react";
 
 export default function BusinessRegistration() {
   const [passwordType, setpasswordType] = useState("password");
 
   const togglePasswordView = () => {
-    setpasswordType((prevType) =>
-      prevType === "password" ? "text" : "password"
-    );
+    setpasswordType((prevType) => (prevType === "text" ? "password" : "text"));
+  };
+
+  const handleSubmit = () => {
+    console.log(handleSubmit);
+  };
+
+  let data = {
+    firstname: "",
+    lastname: "",
+    businessName: "",
+    country: "",
+    email: "",
+    phoneNumber: Number(),
+    password: "",
   };
 
   return (
-    <div className="min-h-screen flex justify-center">
-      <div className="mt-10 flex flex-col">
-        <div className="flex justify-center">
-          <img src={Pulse} alt="Invoice Pulse" className="pb-5 h-20 " />
-        </div>
-        <h1 className="text-slightGray text-[20px] font-Nunito">
-          Enter your details to set up your business account
-        </h1>
-        <form className="flex flex-col mt-10 text-lighterGray max-w-2xl mx-auto justify-center font-Montserrat">
-          <label
-            htmlFor="Full name"
-            className="text-[16px] text-slightGray font-[500]"
-          >
-            Full Name
-          </label>
-          <div className="space-x-5 flex justify-between my-4">
-            <input
-              type="text"
-              placeholder="First name"
-              className="border border-borderGray py-3 px-3 rounded-md outline-mustard text-black"
-            />
-            <input
-              type="text"
-              placeholder="Last name"
-              className="border border-borderGray py-3 px-3 rounded-md outline-mustard text-black"
-            />
-          </div>
-          <div className="my-4">
-            <label
-              htmlFor="Full name"
-              className="text-[16px] text-slightGray font-[500]"
-            >
-              Email address
-            </label>
-            <input
-              type="email"
-              placeholder="JohnDoe@example.com"
-              className="border border-borderGray w-full py-3 px-3 rounded-md outline-mustard my-4 text-black"
-            />
-          </div>
-          <div className="relative">
-            <label
-              htmlFor="Full name"
-              className="text-[16px] text-slightGray font-[500]"
-            >
-              Choose your password
-            </label>
-            <input
-              type={passwordType}
-              className="border border-borderGray text-black w-full  my-4 py-3 px-3 rounded-md outline-mustard "
-            />
-            <div className="absolute top-[53px] right-5">
-              {passwordType == "password" ? (
-                <img
-                  src={eye}
-                  alt="eye"
-                  className="w-6 h-6 cursor-pointer"
-                  onClick={togglePasswordView}
-                />
-              ) : (
-                <img
-                  src={eyeSlash}
-                  alt="eyeSlash"
-                  className="w-6 h-6 cursor-pointer"
-                  onClick={togglePasswordView}
-                />
-              )}
-            </div>
-          </div>
-          <div className="my-3">
-            <label
-              htmlFor="Full name"
-              className="text-[16px] text-slightGray font-[500]"
-            >
-              Business Name
-            </label>
-            <input
-              type="text"
-              placeholder="Team Tesla"
-              className="border border-borderGray outline-mustard text-black w-full my-4 py-3 px-3 rounded-md"
-            />
-          </div>
-          <div className="mt-4 space-x-3">
-            <input
-              type="checkbox"
-              className="border border-mustard outline outline-mustard rounded focus:bg-mustard"
-            />
-            <span className="text-black">
-              I accept the{" "}
-              <Link to="/term-conditions" className="text-mustard">
-                terms and conditions of Invoice Pulse
-              </Link>{" "}
-            </span>
-          </div>
-          <Button style="ml-5 " text="Create and account" />
-        </form>
-        <p className="text-slate-600 text-sm mt-3 text-center mb-10">
-          Already have an account?
-          <Link to="/login" className="text-mustard">
-            Login here
-          </Link>
-        </p>
+    <Center h="100vh" flexDir="column" className=" font-Nunito">
+      <div className="text-center">
+        <img src={Pulse} className="mx-auto" alt="Pulse Logo" />
+        <p>Enter your details to set up your business account</p>
       </div>
-    </div>
+      <Formik initialValues={data} onSubmit={handleSubmit}>
+        <Form>
+          <Stack pt={"20px"} spacing={"15px"}>
+            <p className=" text-[14px]">Full Name</p>
+            <Flex gap={"20px"}>
+              <div>
+                <Field
+                  as={Input}
+                  type="name"
+                  placeholder="First Name"
+                  name="firstname"
+                  required
+                  focusBorderColor="#FFDB58"
+                  fontSize={"14px"}
+                />
+              </div>
+              <div>
+                <Field
+                  as={Input}
+                  type="name"
+                  placeholder="Last Name"
+                  name="lastname"
+                  required
+                  focusBorderColor="#FFDB58"
+                  fontSize={"14px"}
+                />
+              </div>
+            </Flex>
+            <div>
+              <p className=" text-[14px]">Email Address</p>
+              <Field
+                as={Input}
+                type="email"
+                placeholder="Email Address"
+                name="email"
+                required
+                focusBorderColor="#FFDB58"
+                fontSize={"14px"}
+              />
+            </div>
+            <div className="relative">
+              <p className=" text-[14px]">Choose a Password</p>
+              <Field
+                as={Input}
+                type={passwordType}
+                name="password"
+                required
+                focusBorderColor="#FFDB58"
+                fontSize={"14px"}
+              />
+              <div className="absolute top-[33px] right-5">
+                {passwordType === "password" ? (
+                  <img
+                    src={eye}
+                    alt="eye"
+                    className="w-6 h-6 cursor-pointer"
+                    onClick={togglePasswordView}
+                  />
+                ) : (
+                  <img
+                    src={eyeSlash}
+                    alt="eyeSlash"
+                    className="w-6 h-6 cursor-pointer"
+                    onClick={togglePasswordView}
+                  />
+                )}
+              </div>
+            </div>
+            <div>
+              <p className=" text-[14px]">Business Name</p>
+              <Field
+                as={Input}
+                type="businessName"
+                placeholder="Business Name"
+                name="businessName"
+                required
+                focusBorderColor="#FFDB58"
+                fontSize={"14px"}
+              />
+            </div>
+            <div className=" flex gap-[12px]">
+              <input type="checkbox" />
+              <p className=" text-[14px]">
+                I accecpt the{" "}
+                <span className=" text-mustard ">
+                  <Link to="#">terms and conditions of Invoice Pulse</Link>
+                </span>
+              </p>
+            </div>
+            <div>
+              <button className=" bg-mustard w-[100%] p-[12px] mt-[12px] rounded">
+                <Link to="/dashboard/*" className=" text-white">
+                  Create Account
+                </Link>
+              </button>
+            </div>
+            <div>
+              <p className=" text-center text-[14px]">
+                Already have an account?{" "}
+                <span className=" text-mustard">
+                  <Link to="/login">Log in here</Link>
+                </span>
+              </p>
+            </div>
+          </Stack>
+        </Form>
+      </Formik>
+    </Center>
   );
 }

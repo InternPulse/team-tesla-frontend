@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { Suspense } from "react";
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import OnBoarding from "./Pages/SignUpPages/OnBoarding";
 import BusinessRegistration from "./Pages/SignUpPages/pages/BusinessRegistration";
@@ -11,7 +12,7 @@ import ForgotPassword from "./Pages/ForgotPasswordPage/ForgotPassword";
 
 export default function App() {
   return (
-    <>
+    <Suspense>
       <Routes>
         <Route element={<LandingPage />} path="/" />
         <Route element={<OnBoarding />} path="/onboarding" />
@@ -26,6 +27,6 @@ export default function App() {
         <Route element={<Loading />} path="/auth/loading" />
         <Route element={<DashBoard />} path="/dashboard/*" />
       </Routes>
-    </>
+    </Suspense>
   );
 }

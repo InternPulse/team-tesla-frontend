@@ -11,7 +11,7 @@ export default function Cards({ title, percent, amount }) {
           </span>
         </h2>
       </div>
-      <h1 className="text-[65px] text-slightGray font-Nunito font-[500px]">
+      <h1 className="text-[30px] text-slightGray font-Nunito font-[500px]">
         {amount}
       </h1>
     </div>

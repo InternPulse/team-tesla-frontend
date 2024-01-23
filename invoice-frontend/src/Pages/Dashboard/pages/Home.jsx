@@ -38,7 +38,7 @@ export default function Home() {
             </select>
           </div>
         </div>
-        <div className="flex items-center justify-between  my-5 mt-5">
+        <div className="flex items-center justify-around space-x-3  my-5 mt-5">
           <Cards title="Invoices" percent="+3" amount={250} />
           <Cards title="Payments" percent="+3" amount="$20,000" />
           <Cards title="Expenses" percent="+3" amount="$12,000" />

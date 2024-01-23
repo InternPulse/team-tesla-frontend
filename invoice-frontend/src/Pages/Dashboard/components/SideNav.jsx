@@ -1,20 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Pulse from "/Exclude.png";
+import Navlinks from "../data/Navlinks";
 
 export default function SideNav() {
+  const { pathname } = useLocation();
+
   return (
-    <div className="bg-blue-300 min-h-screen">
-      <nav>
-        <div>
+    <div className="min-h-screen w-[241px]">
+      <nav className="p-6">
+        <div className="pb-10">
           <img src={Pulse} alt="Invoice Pulse" />
         </div>
-        <div className="flex flex-col">
-          <Link to="/dashboard">Home</Link>
-          <Link to="/dashboard/invoices">Invoices</Link>
-          <Link to="/dashboard/payments">Payments</Link>
-          <Link to="/dashboard/clients">Clients</Link>
-          <Link to="/dashboard/expenses">Expenses</Link>
-          <Link to="/dashboard/settings">Settings</Link>
+        <div className="flex flex-col pl-3 space-y-10 font-Montserrat font-[600]">
+          {Navlinks.map((nav, index) => (
+            <div
+              key={index}
+              className="flex items-center space-x-3 hover:text-yellowShade cursor-pointer"
+            >
+              <img src={nav.svg} alt="" />
+              <Link
+                to={nav.url}
+                className={`${pathname === nav.url ? "text-yellowShade" : ""}`}
+              >
+                {nav.name}
+              </Link>
+            </div>
+          ))}
         </div>
       </nav>
     </div>

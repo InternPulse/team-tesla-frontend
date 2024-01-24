@@ -36,7 +36,7 @@ export default [
   },
   {
     id: "006",
-    clientName: "InternPulse",
+    clientName: "Harry",
     Date: Date.now(),
     amount: "$40,000",
     status: "Paid",

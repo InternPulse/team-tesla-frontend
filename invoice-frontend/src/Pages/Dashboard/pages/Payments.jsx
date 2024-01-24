@@ -130,7 +130,7 @@ export default function Invoices() {
           </div>
 
           <div>
-            <select className=" bg-[#fff3cc] text-[13px] p-[5px] mr-10">
+            <select className=" bg-[#fff3cc] text-[13px] p-[8px] mr-10">
               <option>Filter</option>
               <option>Filter</option>
               <option>Filter</option>

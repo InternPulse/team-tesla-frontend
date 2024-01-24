@@ -6,6 +6,7 @@ import Payments from "./pages/Payments";
 import Clients from "./pages/Clients";
 import Expenses from "./pages/Expenses";
 import Settings from "./pages/Settings";
+import CreateInvoice from "./pages/createInvoice";
 
 export default function DashBoard() {
   return (
@@ -17,6 +18,7 @@ export default function DashBoard() {
         <Route element={<Clients />} path="/clients" />
         <Route element={<Expenses />} path="/expenses" />
         <Route element={<Settings />} path="/settings" />
+        <Route element={<CreateInvoice />} path="/createinvoice" />
       </Routes>
     </Layout>
   );

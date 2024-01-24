@@ -32,7 +32,7 @@ export default function Home() {
           <div>
             <select
               name="range"
-              className="bg-yellowTint font-Montserrat font-[400]"
+              className="bg-yellowTint font-Montserrat font-[400] text-[12px] px-[12px] py-[5px]"
             >
               <option value="Monthly">Monthly</option>
             </select>

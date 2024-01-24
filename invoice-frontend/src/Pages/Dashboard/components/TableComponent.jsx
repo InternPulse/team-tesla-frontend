@@ -21,7 +21,7 @@ const TableComponent = ({ data }) => {
 
   return (
     <div className="container mx-auto mt-8">
-      <table className="min-w-full bg-white border-b ">
+      <table className="min-w-full bg-white border-b rounded-[10px]">
         <thead>
           <tr className="font-Montserrat font-[600]">
             <th>#</th>
@@ -34,12 +34,14 @@ const TableComponent = ({ data }) => {
         <tbody>
           {data.map((item) => (
             <tr key={item.id} className="font-Montserrat font-[400] mb-10 ">
-              <td className="text-center py-8">{item.id}</td>
-              <td className="text-center py-8">{item.clientName}</td>
-              <td className="text-center py-8">
+              <td className="text-center py-8 text-[12px]">{item.id}</td>
+              <td className="text-center py-8 text-[12px]">
+                {item.clientName}
+              </td>
+              <td className="text-center py-8 text-[12px]">
                 {new Date(item.Date).toLocaleDateString()}
               </td>
-              <td className="text-center py-8">{item.amount}</td>
+              <td className="text-center py-8 text-[12px]">{item.amount}</td>
               <td
                 className={`rounded-full    text-center ${getStatusColor(
                   item.status

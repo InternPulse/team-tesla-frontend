@@ -11,7 +11,6 @@ import TableComponent from "../components/TableComponent";
 import UserData from "../data/UserData";
 import searchIcon from "../../../assets/Vector.png";
 import Calendar from "../../../assets/Calendar.png";
-import { Link } from "react-router-dom";
 
 export default function Invoices() {
   const [startDate, setStartDate] = useState(null);
@@ -89,7 +88,7 @@ export default function Invoices() {
               showYearDropdown
               showMonthDropdown
               placeholderText="From:"
-              className="h-[152.02px] h-[29px] top-178px left-1137px px-2 mb-2  bg-[#fff3cc] text-sm"
+              className=" h-[29px] top-178px left-1137px px-2 mb-2  bg-[#fff3cc] text-sm"
             />
             <div className="relative left-40 bottom-7">
               <img src={Calendar} alt="cal" />
@@ -101,7 +100,7 @@ export default function Invoices() {
               showYearDropdown
               showMonthDropdown
               placeholderText="To:"
-              className="h-[152.02px] h-[29px] top-178px left-1137px px-2  bg-[#fff3cc] text-sm"
+              className=" h-[29px] top-178px left-1137px px-2  bg-[#fff3cc] text-sm"
             />
             <div className="relative left-40 bottom-5">
               <img src={Calendar} alt="cal" />
@@ -110,7 +109,7 @@ export default function Invoices() {
         </div>
       </div>
       <div className=" bg-white py-[25px] mt-[20px] rounded-[10px] ">
-        <div className=" max-w-[900px]  flex  mx-auto flex justify-between border-b pb-4 ">
+        <div className=" max-w-[900px]  mx-auto flex justify-between border-b pb-4 ">
           <p className="font-semibold text-[15px] text-[#404859]">
             All Payments
           </p>

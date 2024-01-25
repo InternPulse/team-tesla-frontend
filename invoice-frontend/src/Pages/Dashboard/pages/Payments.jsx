@@ -3,7 +3,7 @@ import settings2 from "../../../assets/settings2.png";
 import person from "../../../assets/person.png";
 import search from "../../../assets/search.png";
 // import PaymentCard from "../../../assets/PaymentCard.png";
-import Chart from "../../../assets/chart.png";
+// import Chart from "../../../assets/chart.png";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -77,7 +77,7 @@ export default function Invoices() {
               All Invoices
             </p>
             <div className="my-auto w-[80%] relative bottom-[20px] ">
-              <img src={Chart} alt="chat" className="w-[100%] my-[30px]" />
+              {/* <img src={Chart} alt="chat" className="w-[100%] my-[30px]" /> */}
             </div>
           </div>
           <div className="mr-4">

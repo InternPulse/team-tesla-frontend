@@ -2,7 +2,7 @@ import bell from "../../../assets/bell.png";
 import settings2 from "../../../assets/settings2.png";
 import person from "../../../assets/person.png";
 import search from "../../../assets/search.png";
-import PaymentCard from "../../../assets/PaymentCard.png";
+// import PaymentCard from "../../../assets/PaymentCard.png";
 import Chart from "../../../assets/chart.png";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
@@ -68,7 +68,7 @@ export default function Invoices() {
             </div>
           </div>
           <div className="w-[50%] relative left-[50px]">
-            <img src={PaymentCard} className="w-[82%]" />
+            {/* <img src={PaymentCard} className="w-[82%]" /> */}
           </div>
         </div>
         <div className="flex bg-white justify-between  p-[10px]  w-[492px] rounded-[10px] h-[180px] ">

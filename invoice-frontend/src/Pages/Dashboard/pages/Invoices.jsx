@@ -3,7 +3,7 @@ import settings2 from "../../../assets/settings2.png";
 import person from "../../../assets/person.png";
 import search from "../../../assets/search.png";
 import lady from "../../../assets/lady.png";
-import Chart from "../../../assets/chart.png";
+// import Chart from "../../../assets/chart.png";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";

@@ -74,7 +74,7 @@ export default function Invoices() {
           <div>
             <p>All Invoices</p>
             <div className="my-auto w-[80%] relative bottom-[20px] ">
-              <img src={Chart} alt="chat" className="w-[100%] my-[30px]" />
+              {/* <img src={Chart} alt="chat" className="w-[100%] my-[30px]" /> */}
             </div>
           </div>
           <div>

@@ -24,7 +24,7 @@ export default function App() {
     );
   }
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route element={<LandingPage />} path="/" />
         <Route element={<OnBoarding />} path="/onboarding" />
@@ -38,7 +38,8 @@ export default function App() {
         <Route element={<Authentication />} path="/auth" />
         <Route element={<Loading />} path="/auth/loading" />
         <Route element={<DashBoard />} path="/dashboard/*" />
-        <Route element={<ClientPage />} path="/clientpage" />
+        <Route element={<ClientPage />} path="/clientPages" />
+        {/* Add more routes accessible to authenticated users */}
       </Routes>
     </Suspense>
   );

@@ -1,21 +1,59 @@
-// import Button from "../component/Button";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { Center, Input, Stack } from "@chakra-ui/react";
 import Pulse from "/Exclude.png";
-import { Link } from "react-router-dom";
 import eye from "../../assets/eye.svg";
 import eyeSlash from "../../assets/eyeSlash.svg";
-import { useState } from "react";
-import { Formik, Form, Field } from "formik";
-import { Center, Input, Stack } from "@chakra-ui/react";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { loginSuccess, loginFailure } from "../../features/userSlice";
 
-export default function BusinessRegistration() {
+export default function LoginForm() {
+  const navigate = useNavigate();
   const [passwordType, setpasswordType] = useState("password");
+  const [loginError, setLoginError] = useState(null);
 
   const togglePasswordView = () => {
     setpasswordType((prevType) => (prevType === "text" ? "password" : "text"));
   };
 
-  const handleSubmit = () => {
-    console.log(handleSubmit);
+  const dispatch = useDispatch();
+
+  const handleSubmit = async (values) => {
+    try {
+      const response = await axios.post(
+        "https://team-tesla-backend-oofiv.ondigitalocean.app/api/user/signin/",
+        {
+          email: values.username,
+          password: values.password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      dispatch(
+        loginSuccess({
+          email: values.username,
+          token: response.data.token,
+          loggedIn: true,
+        })
+      );
+
+      navigate("/dashboard");
+    } catch (error) {
+      setLoginError(
+        error.response.data.message ||
+          error.response.data.email ||
+          "Login failed"
+      );
+
+      dispatch(loginFailure(loginError));
+    }
   };
 
   let data = {
@@ -23,13 +61,28 @@ export default function BusinessRegistration() {
     password: "",
   };
 
+  const validationSchema = Yup.object().shape({
+    username: Yup.string().required("Please enter your username"),
+    password: Yup.string().required("Please enter your password"),
+  });
+
   return (
     <Center h="100vh" flexDir="column" className=" font-Nunito">
       <div className="text-center">
         <img src={Pulse} className="mx-auto my-[10px]" alt="Pulse Logo" />
         <p className=" text-[14px]">Enter your account details</p>
       </div>
-      <Formik initialValues={data} onSubmit={handleSubmit}>
+      {loginError && (
+        <div className="text-red-500 text-sm mt-2 border border-red-500 p-2 !important">
+          {loginError}
+        </div>
+      )}
+
+      <Formik
+        initialValues={data}
+        onSubmit={handleSubmit}
+        validationSchema={validationSchema}
+      >
         <Form>
           <Stack pt={"20px"} spacing={"15px"}>
             <p className=" text-[14px]">Username</p>
@@ -39,9 +92,13 @@ export default function BusinessRegistration() {
                 type="name"
                 placeholder="Username"
                 name="username"
-                required
                 focusBorderColor="#FFDB58"
                 fontSize={"14px"}
+              />
+              <ErrorMessage
+                name="username"
+                component="div"
+                className="text-red-500"
               />
             </div>
 
@@ -51,7 +108,6 @@ export default function BusinessRegistration() {
                 as={Input}
                 type={passwordType}
                 name="password"
-                required
                 focusBorderColor="#FFDB58"
                 fontSize={"14px"}
                 width="350px"
@@ -73,18 +129,24 @@ export default function BusinessRegistration() {
                   />
                 )}
               </div>
+              <ErrorMessage
+                name="password"
+                component="div"
+                className="text-red-500"
+              />
             </div>
 
             <div>
-              <button className=" bg-mustard w-[100%] p-[12px] mt-[12px] rounded">
-                <Link to="/dashboard/*" className=" text-white">
-                  Login
-                </Link>
+              <button
+                className=" bg-mustard w-[100%] p-[12px] mt-[12px] rounded text-white"
+                type="submit"
+              >
+                Login
               </button>
             </div>
             <div>
               <p className=" text-center text-[14px]">
-                Dont have an account?
+                Don't have an account?
                 <span className=" text-mustard">
                   <Link to="/onboarding"> Sign Up</Link>
                 </span>

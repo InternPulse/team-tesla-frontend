@@ -2,8 +2,8 @@ import bell from "../../../assets/bell.png";
 import settings2 from "../../../assets/settings2.png";
 import person from "../../../assets/person.png";
 import search from "../../../assets/search.png";
-// import PaymentCard from "../../../assets/PaymentCard.png";
-// import Chart from "../../../assets/chart.png";
+import PaymentCard from "../../../assets/PaymentCard.png";
+import Chart from "../../../assets/chart.png";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -43,41 +43,50 @@ export default function Invoices() {
         </div>
       </div>
       <div className="flex gap-[30px] justify-between mt-[30px]">
-        <div className="flex justify-between bg-white w-[50%] px-[15px] rounded-[10px] h-[180px] ">
-          <div className="my-auto leading-[30px] font-Montserrat text-[13px]">
+        <div className="flex flex-col md:flex-row justify-between bg-white w-full  md:max-w-[47%] px-4 rounded-md md:min-h-[180px]">
+          <div className="md:my-3 leading-5 md:leading-[30px] font-Montserrat text-sm md:text-[13px]">
             <div>
-              <p className="text-[16px] font-semibold text-[#404859] font-montserrat">
+              <p className="text-lg md:text-xl font-semibold text-[#404859] font-montserrat">
                 Payments
               </p>
               <p>Invoice Number - 1G23XTA</p>
-              <div className="flex justify-between">
+              <div className="flex flex-col md:flex-row justify-between">
                 <p>08/12/2023</p>
                 <div>
-                  <p>pending</p>
+                  <p className="md:text-[16px] md:px-2 text-[#FFC300]">
+                    pending
+                  </p>
                 </div>
               </div>
-              <div className="flex justify-between">
-                <a href="/" className="text-[#FFC300] underline">
+              <div className="flex flex-col md:flex-row justify-between mt-2 md:mt-0">
+                <a href="/" className="text-[#FFC300] underline md:mr-4">
                   Generate payment link
                 </a>
               </div>
             </div>
-            <div className="flex justify-between">
-              <p className="underline cursor-pointer">Prev</p>
-              <p className="cursor-pointer underline">Next</p>
+            <div className="flex flex-col md:flex-row mt-2 md:mt-0">
+              <p className="underline cursor-pointer mb-2 md:mb-0 md:mr-4 whitespace-nowrap">
+                Prev
+              </p>
+              <p className="cursor-pointer underline whitespace-nowrap">Next</p>
             </div>
           </div>
-          <div className="w-[50%] relative left-[50px]">
-            {/* <img src={PaymentCard} className="w-[82%]" /> */}
+          <div className="min-w-[55%] md:max-h-[87%] relative   md:mt-1 md:left-12 flex justify-center md:justify-start">
+            <img
+              src={PaymentCard}
+              className="w-full h-auto sm:w-[72%]"
+              alt="Payment Card"
+            />
           </div>
         </div>
+
         <div className="flex bg-white justify-between  p-[10px]  w-[492px] rounded-[10px] h-[180px] ">
           <div>
             <p className="text-[16px] font-semibold font-montserrat text-[#404859]">
               All Invoices
             </p>
-            <div className="my-auto w-[80%] relative bottom-[20px] ">
-              {/* <img src={Chart} alt="chat" className="w-[100%] my-[30px]" /> */}
+            <div className="my-auto w-full md:w-[80%] md:mt-3 relative">
+              <img src={Chart} alt="chart" className="w-full h-auto" />
             </div>
           </div>
           <div className="mr-4">
@@ -110,7 +119,7 @@ export default function Invoices() {
       </div>
       <div className=" bg-white py-[25px] mt-[20px] rounded-[10px] ">
         <div className=" max-w-[900px]  mx-auto flex justify-between border-b pb-4 ">
-          <p className="font-semibold text-[15px] text-[#404859]">
+          <p className="font-semibold text-[15px] text-[#404859] sm:px-2">
             All Payments
           </p>
 

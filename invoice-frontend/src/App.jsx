@@ -1,4 +1,6 @@
-import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { Suspense } from "react";
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import OnBoarding from "./Pages/SignUpPages/OnBoarding";
@@ -10,19 +12,34 @@ import Loading from "./Pages/SignUpPages/pages/Loading";
 import DashBoard from "./Pages/Dashboard/Dashboard";
 import ForgotPassword from "./Pages/ForgotPasswordPage/ForgotPassword";
 import ClientPage from "./Pages/ClientPage/ClientPage";
+import { selectUser } from "./features/userSlice";
 
 export default function App() {
-  const isMobile = window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const user = useSelector(selectUser); // Get the user state from Redux store
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   if (isMobile) {
     return (
-      <div>
-        <p className="text-center text-xl flex min-h-screen items-center font-Montserrat">
+      <div className="text-center text-xl min-h-screen flex items-center justify-center bg-gray-100">
+        <p className="font-Montserrat">
           Please use a laptop or desktop device to access this application.
         </p>
       </div>
     );
   }
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
@@ -37,9 +54,18 @@ export default function App() {
         <Route element={<ForgotPassword />} path="/forgotPassword" />
         <Route element={<Authentication />} path="/auth" />
         <Route element={<Loading />} path="/auth/loading" />
-        <Route element={<DashBoard />} path="/dashboard/*" />
+        {/* Protected route for the dashboard */}
+        <Route
+          element={
+            user && user.isAuthenticated ? (
+              <DashBoard />
+            ) : (
+              <Navigate to="/login" />
+            )
+          } // Redirect to login if not authenticated
+          path="/dashboard/*"
+        />
         <Route element={<ClientPage />} path="/clientPages" />
-        {/* Add more routes accessible to authenticated users */}
       </Routes>
     </Suspense>
   );

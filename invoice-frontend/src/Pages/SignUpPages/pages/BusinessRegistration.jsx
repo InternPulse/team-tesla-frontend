@@ -3,29 +3,18 @@ import Pulse from "/Exclude.png";
 import { Link } from "react-router-dom";
 import eye from "../../../assets/eye.svg";
 import eyeSlash from "../../../assets/eyeSlash.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Formik, Form, Field } from "formik";
 import { Center, Input, Stack, Flex } from "@chakra-ui/react";
 
 export default function BusinessRegistration() {
-  const [passwordType, setpasswordType] = useState("password");
-
   const togglePasswordView = () => {
     setpasswordType((prevType) => (prevType === "text" ? "password" : "text"));
   };
 
-  const handleSubmit = () => {
-    console.log(handleSubmit);
-  };
-
-  let data = {
-    firstname: "",
-    lastname: "",
-    businessName: "",
-    country: "",
-    email: "",
-    phoneNumber: Number(),
-    password: "",
+  const SignUp = () => {
+    let item = { firstName, lastname, businessname, email, passwordType };
+    console.log(item);
   };
 
   return (
@@ -34,7 +23,7 @@ export default function BusinessRegistration() {
         <img src={Pulse} className="mx-auto" alt="Pulse Logo" />
         <p>Enter your details to set up your business account</p>
       </div>
-      <Formik initialValues={data} onSubmit={handleSubmit}>
+      <Formik>
         <Form>
           <Stack pt={"20px"} spacing={"15px"}>
             <p className=" text-[14px]">Full Name</p>
@@ -124,8 +113,11 @@ export default function BusinessRegistration() {
               </p>
             </div>
             <div>
-              <button className=" bg-mustard w-[100%] p-[12px] mt-[12px] rounded">
-                <Link to="/dashboard/*" className=" text-white">
+              <button
+                className=" bg-mustard w-[100%] p-[12px] mt-[12px] rounded"
+                onClick={SignUp}
+              >
+                <Link to="" className=" text-white">
                   Create Account
                 </Link>
               </button>

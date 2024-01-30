@@ -5,12 +5,19 @@ import search from "../../../assets/search.png";
 import Cards from "../components/Cards";
 import UserData from "../data/UserData";
 import TableComponent from "../components/TableComponent";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../../features/userSlice";
 
 export default function Home() {
+  const user = useSelector(selectUser);
+  const userName = user?.name || "Guest";
   return (
     <section className="p-5">
       <div className=" flex justify-between items-center">
-        <h1 className="font-Nunito font-[400] text-[30px]">Hello, John!</h1>
+        <h1 className="font-Nunito font-[400] text-[30px]">
+          {" "}
+          Hello, {userName}!
+        </h1>
         <div className="flex items-center mr-10 relative">
           <input
             type="text"

@@ -16,7 +16,7 @@ import { selectUser } from "./features/userSlice";
 
 export default function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const user = useSelector(selectUser); // Get the user state from Redux store
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     const handleResize = () => {

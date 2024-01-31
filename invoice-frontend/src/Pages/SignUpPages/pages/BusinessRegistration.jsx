@@ -26,7 +26,7 @@ export default function BusinessRegistration() {
   const dispatch = useDispatch();
 
   const signUP_URL =
-    "https://team-tesla-backend-oofiv.ondigitalocean.app/api/user/signin/";
+    "https://team-tesla-backend-oofiv.ondigitalocean.app/api/user/signup/";
 
   const handlesubmit = async (values) => {
     try {

@@ -10,6 +10,7 @@ import Loading from "./Pages/SignUpPages/pages/Loading";
 import DashBoard from "./Pages/Dashboard/Dashboard";
 import ForgotPassword from "./Pages/ForgotPasswordPage/ForgotPassword";
 import ClientPage from "./Pages/ClientPage/ClientPage";
+import NewInvoice from "./Pages/NewInvoice";
 
 export default function App() {
   const isMobile = window.innerWidth < 768;
@@ -39,7 +40,7 @@ export default function App() {
         <Route element={<Loading />} path="/auth/loading" />
         <Route element={<DashBoard />} path="/dashboard/*" />
         <Route element={<ClientPage />} path="/clientPages" />
-        {/* Add more routes accessible to authenticated users */}
+        <Route element={<NewInvoice />} path="/create invoice" />
       </Routes>
     </Suspense>
   );

@@ -3,7 +3,7 @@ import settings2 from "../../../assets/settings2.png";
 import person from "../../../assets/person.png";
 import search from "../../../assets/search.png";
 import lady from "../../../assets/lady.png";
-// import Chart from "../../../assets/chart.png";
+import Chart from "../../../assets/chart.png";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -12,8 +12,13 @@ import UserData from "../data/UserData";
 import searchIcon from "../../../assets/Vector.png";
 import plus from "../../../assets/plus.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../../features/userSlice";
 
 export default function Invoices() {
+  const user = useSelector(selectUser);
+  const userName = user?.name || "Guest";
+
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
@@ -28,7 +33,9 @@ export default function Invoices() {
   return (
     <section className="p-5 font-Montserrat">
       <div className="flex justify-between items-center">
-        <h1 className="font-Nunito font-[400] text-[30px]">Hello, John!</h1>
+        <h1 className="font-Nunito font-[400] text-[30px]">
+          Hello, {userName}!
+        </h1>
         <div className="flex items-center mr-10 relative">
           <input
             type="text"
@@ -74,7 +81,7 @@ export default function Invoices() {
           <div>
             <p>All Invoices</p>
             <div className="my-auto w-[80%] relative bottom-[20px] ">
-              {/* <img src={Chart} alt="chat" className="w-[100%] my-[30px]" /> */}
+              <img src={Chart} alt="chat" className="w-[100%] my-[30px]" />
             </div>
           </div>
           <div>
@@ -102,8 +109,8 @@ export default function Invoices() {
           </div>
         </div>
       </div>
-      <div className=" bg-white py-[25px] mt-[20px] rounded-[10px]">
-        <div className=" max-w-[900px] mx-auto flex justify-between  ">
+      <div className=" bg-white py-[25px] mt-[20px] rounded-[10px] ">
+        <div className=" max-w-[900px] mx-auto flex justify-between border-b-[1px] border-[#9FA3AC] pb-[13px] ">
           <div className="  w-[25%]">
             <p>All Invoices</p>
           </div>
@@ -117,7 +124,7 @@ export default function Invoices() {
               <img src={searchIcon} className=" w-[100%] pt-[3px] " />
             </div>
           </div>
-          <Link to="/createinvoice">
+          <Link to="/create invoice">
             <button className=" flex justify-around bg-mustard rounded-[5px] py-[5px] px-[3px]">
               <p className=" my-auto text-[12px] text-white font-semibold">
                 New Invoice

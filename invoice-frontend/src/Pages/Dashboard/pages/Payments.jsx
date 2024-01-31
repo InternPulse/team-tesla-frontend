@@ -27,7 +27,9 @@ export default function Invoices() {
   return (
     <section className="p-5 font-Montserrat">
       <div className="flex justify-between items-center">
-        <h1 className="font-Nunito font-[400] text-[30px]">Payments</h1>
+        <h1 className="font-Nunito font-[400] md:text-[30px] md:pr-4">
+          Payments
+        </h1>
         <div className="flex items-center mr-10 relative">
           <input
             type="text"

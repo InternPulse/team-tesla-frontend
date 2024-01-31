@@ -37,11 +37,12 @@ export default function LoginForm() {
           },
         }
       );
+      console.log(response.data);
 
       dispatch(
         loginSuccess({
           email: values.username,
-          token: response.data.token,
+          token: response.data.access_token,
           loggedIn: true,
         })
       );
@@ -98,6 +99,7 @@ export default function LoginForm() {
                 name="username"
                 focusBorderColor="#FFDB58"
                 fontSize={"14px"}
+                autoComplete="username"
               />
               <ErrorMessage
                 name="username"
@@ -115,6 +117,7 @@ export default function LoginForm() {
                 focusBorderColor="#FFDB58"
                 fontSize={"14px"}
                 width="350px"
+                autoComplete="current-password"
               />
               <div className="absolute top-[30px] right-5">
                 {passwordType === "password" ? (

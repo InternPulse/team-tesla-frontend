@@ -13,6 +13,7 @@ import DashBoard from "./Pages/Dashboard/Dashboard";
 import ForgotPassword from "./Pages/ForgotPasswordPage/ForgotPassword";
 import ClientPage from "./Pages/ClientPage/ClientPage";
 import { selectUser } from "./features/userSlice";
+import NewInvoice from "./Pages/NewInvoice";
 
 export default function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -66,6 +67,9 @@ export default function App() {
           path="/dashboard/*"
         />
         <Route element={<ClientPage />} path="/clientPages" />
+
+        <Route element={<NewInvoice />} path="/create invoice" />
+
       </Routes>
     </Suspense>
   );

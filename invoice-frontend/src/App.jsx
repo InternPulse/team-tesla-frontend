@@ -12,12 +12,10 @@ import Loading from "./Pages/SignUpPages/pages/Loading";
 import DashBoard from "./Pages/Dashboard/Dashboard";
 import ForgotPassword from "./Pages/ForgotPasswordPage/ForgotPassword";
 import ClientPage from "./Pages/ClientPage/ClientPage";
-import { selectUser } from "./features/userSlice";
 import NewInvoice from "./Pages/NewInvoice";
 
 export default function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const user = useSelector(selectUser);
 
   useEffect(() => {
     const handleResize = () => {
@@ -55,21 +53,9 @@ export default function App() {
         <Route element={<ForgotPassword />} path="/forgotPassword" />
         <Route element={<Authentication />} path="/auth" />
         <Route element={<Loading />} path="/auth/loading" />
-        {/* Protected route for the dashboard */}
-        <Route
-          element={
-            user && user.isAuthenticated ? (
-              <DashBoard />
-            ) : (
-              <Navigate to="/login" />
-            )
-          } // Redirect to login if not authenticated
-          path="/dashboard/*"
-        />
+        <Route element={<DashBoard />} path="/dashboard/" />
         <Route element={<ClientPage />} path="/clientPages" />
-
         <Route element={<NewInvoice />} path="/create invoice" />
-
       </Routes>
     </Suspense>
   );

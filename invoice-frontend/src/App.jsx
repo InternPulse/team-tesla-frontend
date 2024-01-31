@@ -53,7 +53,7 @@ export default function App() {
         <Route element={<ForgotPassword />} path="/forgotPassword" />
         <Route element={<Authentication />} path="/auth" />
         <Route element={<Loading />} path="/auth/loading" />
-        <Route element={<DashBoard />} path="/dashboard/" />
+        <Route element={<DashBoard />} path="/dashboard/*" />
         <Route element={<ClientPage />} path="/clientPages" />
         <Route element={<NewInvoice />} path="/create invoice" />
       </Routes>

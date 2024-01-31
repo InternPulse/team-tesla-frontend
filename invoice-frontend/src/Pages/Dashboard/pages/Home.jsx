@@ -10,7 +10,9 @@ import { selectUser } from "../../../features/userSlice";
 
 export default function Home() {
   const user = useSelector(selectUser);
-  const userName = user?.name || "Guest";
+  console.log(user);
+  const userName = (user?.email || "Guest").split("@")[0];
+
   return (
     <section className="p-5">
       <div className=" flex justify-between items-center">

@@ -9,7 +9,7 @@ export default function SideNav() {
   return (
     <div className="min-h-screen w-[241px] relative p-[30px]">
       <nav className=" h-full fixed ">
-        <div className="pb-10  w-[65%]">
+        <div className="pb-10  sm:w-[45%]">
           <img src={Pulse} alt="Invoice Pulse" className=" w-[100%] mx-auto" />
         </div>
         <div className="flex flex-col pl-3 space-y-10 font-Montserrat font-[600]">

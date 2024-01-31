@@ -9,19 +9,21 @@ import eyeSlash from "../../assets/eyeSlash.svg";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { loginSuccess, loginFailure } from "../../features/userSlice";
+import Spinner from "../../components/spinner/Spinner";
 
 export default function LoginForm() {
   const navigate = useNavigate();
-  const [passwordType, setpasswordType] = useState("password");
+  const [passwordType, setPasswordType] = useState("password");
+  const [loading, setLoading] = useState(false);
   const [loginError, setLoginError] = useState(null);
-
-  const togglePasswordView = () => {
-    setpasswordType((prevType) => (prevType === "text" ? "password" : "text"));
-  };
-
   const dispatch = useDispatch();
 
+  const togglePasswordView = () => {
+    setPasswordType((prevType) => (prevType === "text" ? "password" : "text"));
+  };
+
   const handleSubmit = async (values) => {
+    setLoading(true);
     try {
       const response = await axios.post(
         "https://team-tesla-backend-oofiv.ondigitalocean.app/api/user/signin/",
@@ -53,6 +55,8 @@ export default function LoginForm() {
       );
 
       dispatch(loginFailure(loginError));
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -73,7 +77,7 @@ export default function LoginForm() {
         <p className=" text-[14px]">Enter your account details</p>
       </div>
       {loginError && (
-        <div className="text-red-500 text-sm mt-2 border border-red-500 p-2 !important">
+        <div className="text-red-500 bg-red-100 text-sm mt-2 border border-red-500 p-2 !important">
           {loginError}
         </div>
       )}
@@ -141,7 +145,7 @@ export default function LoginForm() {
                 className=" bg-mustard w-[100%] p-[12px] mt-[12px] rounded text-white"
                 type="submit"
               >
-                Login
+                {loading ? <Spinner /> : "Login"}
               </button>
             </div>
             <div>

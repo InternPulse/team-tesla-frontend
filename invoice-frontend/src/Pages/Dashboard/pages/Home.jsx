@@ -15,7 +15,6 @@ export default function Home() {
     <section className="p-5">
       <div className=" flex justify-between items-center">
         <h1 className="font-Nunito font-[400] text-[30px]">
-          {" "}
           Hello, {userName}!
         </h1>
         <div className="flex items-center mr-10 relative">
